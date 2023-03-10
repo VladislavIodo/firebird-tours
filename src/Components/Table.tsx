@@ -7,14 +7,10 @@ import {
     TableHead,
     TableRow,
     TextField,
-    Button,
-    Dialog,
-    DialogTitle,
-    DialogContent,
-    DialogContentText,
-    DialogActions
+    Button
 } from '@material-ui/core';
 import "./Table.css";
+import ModalComponent from "./Modal";
 
 interface User {
     id: number;
@@ -34,7 +30,7 @@ interface User {
     };
 }
 
-const TableComponent: React.FC = () => {
+const TableComponent = () => {
     const [users, setUsers] = useState<User[]>([]);
     const [searchTerm, setSearchTerm] = useState<string>('');
     const [deletedUsers, setDeletedUsers] = useState<User[]>([]);
@@ -88,7 +84,6 @@ const TableComponent: React.FC = () => {
 
     const filteredUsers = filterUsers(users, searchTerm);
 
-
     return (
         <div>
             <div className={"tools__control"}>
@@ -125,26 +120,7 @@ const TableComponent: React.FC = () => {
                     </TableBody>
                 </Table>
             </TableContainer>
-            <Dialog open={selectedUser !== null} onClose={handleCloseModal}>
-                {selectedUser && (
-                    <>
-                        <DialogTitle>{selectedUser.name}</DialogTitle>
-                        <DialogContent>
-                            <DialogContentText>
-                                Address: {selectedUser.address.street}, {selectedUser.address.suite}, {selectedUser.address.city}, {selectedUser.address.zipcode}
-                            </DialogContentText>
-                            <DialogContentText>
-                                Company: {selectedUser.company.name}, {selectedUser.company.catchPhrase}, {selectedUser.company.bs}
-                            </DialogContentText>
-                        </DialogContent>
-                        <DialogActions>
-                            <Button onClick={handleCloseModal} color="primary">
-                                Close
-                            </Button>
-                        </DialogActions>
-                    </>
-                )}
-            </Dialog>
+            <ModalComponent user={selectedUser} onClose={handleCloseModal} />
         </div>
     );
 }
