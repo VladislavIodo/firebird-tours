@@ -22,25 +22,21 @@ type UserModalProps = {
     onClose: () => void;
 };
 
-const ModalComponent = ({ user, onClose }: UserModalProps) => (
-        <Dialog open={Boolean(user)} onClose={onClose}>
-                <>
-                    <DialogTitle>{user?.name}</DialogTitle>
-                    <DialogContent>
-                        <DialogContentText>
-                            Address: {user?.address.street}, {user?.address.suite}, {user?.address.city}, {user?.address.zipcode}
-                        </DialogContentText>
-                        <DialogContentText>
-                            Company: {user?.company.name}, {user?.company.catchPhrase}, {user?.company.bs}
-                        </DialogContentText>
-                    </DialogContent>
-                    <DialogActions>
-                        <Button onClick={onClose} color="primary">
-                            Close
-                        </Button>
-                    </DialogActions>
-                </>
-        </Dialog>
+const ModalComponent = ({user, onClose}: UserModalProps) => (
+    <Dialog open={Boolean(user)} onClose={onClose}>
+        <DialogTitle>{user?.name}</DialogTitle>
+        <DialogContent>
+            <DialogContentText>
+                Address: {user?.address.street}, {user?.address.suite}, {user?.address.city}, {user?.address.zipcode}
+            </DialogContentText>
+            <DialogContentText>
+                Company: {user?.company.name}, {user?.company.catchPhrase}, {user?.company.bs}
+            </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+            <Button onClick={onClose} color="primary">Close</Button>
+        </DialogActions>
+    </Dialog>
 );
 
 export default ModalComponent;

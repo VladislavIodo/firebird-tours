@@ -109,18 +109,18 @@ const TableComponent = () => {
                                     dangerouslySetInnerHTML={{__html: highlightSearchTerm(user.name)}}
                                     key={user.id}
                                     onClick={() => handleUserClick(user)}></TableCell>
-                                <TableCell
-                                    dangerouslySetInnerHTML={{__html: highlightSearchTerm(user.username)}}></TableCell>
-                                <TableCell
-                                    dangerouslySetInnerHTML={{__html: highlightSearchTerm(user.email)}}></TableCell>
-                                <TableCell><Button variant="contained" color="secondary"
-                                                   onClick={() => handleDelete(user.id)}>Delete</Button></TableCell>
+                                <TableCell dangerouslySetInnerHTML={{__html: highlightSearchTerm(user.username)}}></TableCell>
+                                <TableCell dangerouslySetInnerHTML={{__html: highlightSearchTerm(user.email)}}></TableCell>
+                                <TableCell>
+                                    <Button variant="contained" color="secondary"
+                                                   onClick={() => handleDelete(user.id)}>Delete</Button>
+                                </TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
                 </Table>
             </TableContainer>
-            <ModalComponent user={selectedUser} onClose={handleCloseModal} />
+            <ModalComponent user={selectedUser} onClose={handleCloseModal}/>
         </div>
     );
 }
