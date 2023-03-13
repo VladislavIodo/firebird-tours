@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.2ad8f31d.css",
-    "main.js": "/static/js/main.bafd9625.js",
-    "index.html": "/index.html",
-    "main.2ad8f31d.css.map": "/static/css/main.2ad8f31d.css.map",
-    "main.bafd9625.js.map": "/static/js/main.bafd9625.js.map"
+    "main.css": "/firebird-tours/static/css/main.2ad8f31d.css",
+    "main.js": "/firebird-tours/static/js/main.bafd9625.js",
+    "index.html": "/firebird-tours/index.html",
+    "main.2ad8f31d.css.map": "/firebird-tours/static/css/main.2ad8f31d.css.map",
+    "main.bafd9625.js.map": "/firebird-tours/static/js/main.bafd9625.js.map"
   },
   "entrypoints": [
     "static/css/main.2ad8f31d.css",
