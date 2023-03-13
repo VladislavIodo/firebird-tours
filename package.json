@@ -1,5 +1,6 @@
 {
   "name": "firebird-tours",
+  "homepage": "https://vladislaviodo.github.io/firebird-tours",
   "version": "0.1.0",
   "private": false,
   "dependencies": {
